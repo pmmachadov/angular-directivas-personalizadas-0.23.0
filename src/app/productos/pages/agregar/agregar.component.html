@@ -16,10 +16,10 @@
         </div>
 
         <div class="col-auto">
-            <span error-msg // Se usa para mostrar el mensaje de error cuando el campo nombre no es válido. Se conecta con la directiva error-msg.directive.ts que se encuentra en la carpeta shared.
+            <span error-msg
                   [mensaje]="texto1"
                   [color]="color"
-                  [valido]="!tieneError('nombre')"> //tieneError es una función que se encuentra en agregar.component.ts. valido es una propiedad que se encuentra en error-msg.directive.ts y se usa para mostrar el mensaje de error. En este caso se muestra el mensaje de error cuando el campo nombre no es válido.
+                  [valido]="!tieneError('nombre')">
             </span>
         </div>
 
@@ -50,7 +50,7 @@
 
 
 <div class="row mt-5"
-    *customIf="miFormulario.valid"> // Se usa para mostrar el mensaje de error cuando el formulario es válido.
+    *customIf="miFormulario.valid"> // Se usa para mostrar el mensaje de error cuando el formulario es válido. customif se encuentra en el archivo custom-if.directive.ts
     <div class="col">
         <div class="alert alert-primary">
             Todo OK!
