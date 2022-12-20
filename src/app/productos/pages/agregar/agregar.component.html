@@ -12,14 +12,14 @@
 
         <div class="col-auto">
             <input class="form-control"
-                   formControlName="nombre">
+                   formControlName="nombre"> //formControlName es el nombre del campo del formulario y se vincula con el nombre del campo del formulario en agregar.component.ts para que se pueda validar.
         </div>
 
         <div class="col-auto">
-            <span error-msg
+            <span error-msg // Se usa para mostrar el mensaje de error cuando el campo nombre no es válido. Se conecta con la directiva error-msg.directive.ts que se encuentra en la carpeta shared.
                   [mensaje]="texto1"
                   [color]="color"
-                  [valido]="!tieneError('nombre')">
+                  [valido]="!tieneError('nombre')"> //tieneError es una función que se encuentra en agregar.component.ts. valido es una propiedad que se encuentra en error-msg.directive.ts y se usa para mostrar el mensaje de error. En este caso se muestra el mensaje de error cuando el campo nombre no es válido.
             </span>
         </div>
 
@@ -29,7 +29,7 @@
     <div class="row mt-3">
         <div class="col">
             <button class="btn btn-primary"
-                    (click)="cambiarNombre()">
+                    (click)="cambiarNombre()"> //Click se usa para que cuando se haga click en el botón se ejecute la función cambiarNombre() que se encuentra en agregar.component.ts
                 Guardar
             </button>
 
@@ -49,8 +49,8 @@
 <pre>Valid: {{ miFormulario.valid }}</pre>
 
 
-<div class="row mt-5" 
-    *customIf="miFormulario.valid">
+<div class="row mt-5"
+    *customIf="miFormulario.valid"> // Se usa para mostrar el mensaje de error cuando el formulario es válido.
     <div class="col">
         <div class="alert alert-primary">
             Todo OK!
